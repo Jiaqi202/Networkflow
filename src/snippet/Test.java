@@ -69,7 +69,7 @@ public class Test {
 	public static void testPerformance() {
 		System.out.println("Test algorithm for 3 times");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		String[] graphTypes = { "./snippet/Sample"};
+		String[] graphTypes = { "./snippet/Random"};
 		for (int i = 0; i < graphTypes.length; i++) {
 			File folder = new File(graphTypes[i]);
 			File[] testScenarios = folder.listFiles();

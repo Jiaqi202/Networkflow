@@ -18,7 +18,7 @@ import java.util.*;
  * @author edhong
  * @version 0.0
  */
-public class Vertex {
+public class PVertex {
     /** the edge list for this vertex */
     LinkedList incidentEdgeList;
 
@@ -31,7 +31,7 @@ public class Vertex {
      * @param data     an object to be associated with this vertex
      * @param name     a name to be associated with this vertex
      */
-    public Vertex(Object data, Object name) {
+    public PVertex(Object data, Object name) {
         this.data = data;
         this.name = name;
         this.incidentEdgeList = new LinkedList();

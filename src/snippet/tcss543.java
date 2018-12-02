@@ -89,8 +89,8 @@ public class tcss543 {
 		public static void testPerformance(){
 			System.out.println("Test three algorithms for 3 times");
 			System.out.println("=================================");
-			String[] graphTypes = {"./snippet/Bipartite","./snippet/FixedDegree", "./snippet/Mesh","./snippet/Random"};
-//			"./snippet/Bipartite","./snippet/FixedDegree", "./snippet/Mesh","./snippet/Random"
+			String[] graphTypes = {"./src/snippet/Sample"};
+//			"./snippet/Bipartite","./snippet/FixedDegree", "./snippet/Mesh","./snippet/Random ,"./snippet/FixedDegree", "./snippet/Mesh","./snippet/Random""
 			
 			for(int i = 0; i< graphTypes.length; i++){
 				File folder = new File(graphTypes[i]);
@@ -119,7 +119,7 @@ public class tcss543 {
 //						ScalingFordFulkerson sff = null;
 						PreflowPush pp = PGraphInput.getPreflowPush(testcase.getPath());
 //						PreflowPush pp = null;
-						System.out.println("\n==========test for" + testcase.getPath() + "===========");
+						System.out.println("==========>test for" + testcase.getPath() + "<===========");
 						
 //						F-F algorithm
 						runAlgorithm("Ford Fulkerson Algorithm", G, ff, sff,pp);

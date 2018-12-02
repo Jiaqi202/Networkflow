@@ -3,7 +3,7 @@ package preflowpush;// Figures A.5-A.6
 import java.io.*;
 import java.util.*;
 
-class InputLib {
+class PInputLib {
     static class InputError extends Error {
         public InputError(String s) {
             super(s);

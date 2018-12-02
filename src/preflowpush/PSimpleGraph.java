@@ -9,16 +9,16 @@ import java.util.*;
 /**
  * A class that represents a graph.
  * 
- * @author edhong
+ * @author zac
  * @version 0.0
  */
-public class SimpleGraph {
+public class PSimpleGraph {
 
     LinkedList vertexList;
     LinkedList edgeList;
 
     // Constructor
-    public SimpleGraph() {
+    public PSimpleGraph() {
         this.vertexList = new LinkedList();
         this.edgeList = new LinkedList();
     }
@@ -44,7 +44,7 @@ public class SimpleGraph {
      * @param v  a vertex
      * @returns  an iterator to the edge list of that vertex
      */
-    public Iterator incidentEdges(Vertex v) {
+    public Iterator incidentEdges(PVertex v) {
         return v.incidentEdgeList.iterator();
     }
 
@@ -52,9 +52,9 @@ public class SimpleGraph {
      * Return an arbitrary vertex of this graph
      * @returns  some vertex of this graph
      */
-    public Vertex aVertex() {
+    public PVertex aVertex() {
         if (vertexList.size() > 0)
-            return (Vertex) vertexList.getFirst();
+            return (PVertex) vertexList.getFirst();
         else
             return null;
     }
@@ -65,9 +65,9 @@ public class SimpleGraph {
      * @param name  a name to be associated with the new vertex
      * @returns  the new vertex
      */
-    public Vertex insertVertex(Object data, Object name) {
-        Vertex v;
-        v = new Vertex(data, name);
+    public PVertex insertVertex(Object data, Object name) {
+        PVertex v;
+        v = new PVertex(data, name);
         vertexList.addLast(v);
         return v;
     }
@@ -80,9 +80,9 @@ public class SimpleGraph {
      * @param name  name to be associated with the new edge
      * @returns  the new edge
      */
-    public Edge insertEdge(Vertex v, Vertex w, Object data, Object name) {
-        Edge e;
-        e = new Edge(v, w, data, name);
+    public PEdge insertEdge(PVertex v, PVertex w, Object data, Object name) {
+        PEdge e;
+        e = new PEdge(v, w, data, name);
         edgeList.addLast(e);
         v.incidentEdgeList.addLast(e);
         w.incidentEdgeList.addLast(e);
@@ -97,8 +97,8 @@ public class SimpleGraph {
      * @param e  an edge
      * @returns  the other endpoint of the edge (or null, if v is not an endpoint of e)
      */
-    public Vertex opposite(Vertex v, Edge e) {
-        Vertex w;
+    public PVertex opposite(PVertex v, PEdge e) {
+        PVertex w;
         
         if (e.getFirstEndpoint() == v) {
             w= e.getSecondEndpoint();
@@ -138,9 +138,9 @@ public class SimpleGraph {
 
         // All Objects stored will be strings.
 
-        SimpleGraph G = new SimpleGraph();
-        Vertex v, w, a, b, c;
-        Edge e, x, y;
+        PSimpleGraph G = new PSimpleGraph();
+        PVertex v, w, a, b, c;
+        PEdge e, x, y;
         v = G.insertVertex(null, "a");
         a = v;
         w = G.insertVertex(null, "b");
@@ -156,18 +156,18 @@ public class SimpleGraph {
 
         System.out.println("Iterating through vertices...");
         for (i= G.vertices(); i.hasNext(); ) {
-            v = (Vertex) i.next();
+            v = (PVertex) i.next();
             System.out.println("found vertex " + v.getName());
         }
 
         System.out.println("Iterating through adjacency lists...");
         for (i= G.vertices(); i.hasNext(); ) {
-            v = (Vertex) i.next();
+            v = (PVertex) i.next();
             System.out.println("Vertex "+v.getName());
             Iterator j;
 
             for (j = G.incidentEdges(v); j.hasNext();) {
-                e = (Edge) j.next();
+                e = (PEdge) j.next();
                 System.out.println("  found edge " + e.getName());
             }
         }

@@ -31,14 +31,14 @@ import java.io.*;
  * @author Bill Conlen
  */
 
-public class KeyboardReader {
+public class PKeyboardReader {
 
    /**
     * Dummy constructor to inhibit documentation. 
     * <p>
     * This class cannot be used to instantiate objects.
     */
-   private KeyboardReader() {}
+   private PKeyboardReader() {}
 
    /**
     * Returned by the <i>readInt()</i> method to indicate EOI.
@@ -171,13 +171,13 @@ public class KeyboardReader {
       // int input
       while (true) {
          System.out.println ("Enter an int");
-         int i = KeyboardReader.readInt();  
-         if (i == KeyboardReader.EOI_INT) {
+         int i = PKeyboardReader.readInt();  
+         if (i == PKeyboardReader.EOI_INT) {
             System.out.println ("EOI"); // swallowed!!?
             System.out.println ("EOI");
             break;
          }
-         else if (i == KeyboardReader.ERROR_INT) {
+         else if (i == PKeyboardReader.ERROR_INT) {
             System.out.println ("ERROR");
             continue;
          }
@@ -188,13 +188,13 @@ public class KeyboardReader {
       // double input
       while (true) {
          System.out.println ("Enter a double");
-         double d = KeyboardReader.readDouble();  
-         if (d == KeyboardReader.EOI_DOUBLE) {
+         double d = PKeyboardReader.readDouble();  
+         if (d == PKeyboardReader.EOI_DOUBLE) {
             System.out.println ("EOI"); // swallowed!!?
             System.out.println ("EOI");
             break;
          }
-         else if (d == KeyboardReader.ERROR_DOUBLE) {
+         else if (d == PKeyboardReader.ERROR_DOUBLE) {
             System.out.println ("ERROR");
             continue;
          }
@@ -205,13 +205,13 @@ public class KeyboardReader {
       // String input
       while (true) {
          System.out.println ("Enter a String");
-         String s = KeyboardReader.readString();  
-         if (s == KeyboardReader.EOI_STRING) {
+         String s = PKeyboardReader.readString();  
+         if (s == PKeyboardReader.EOI_STRING) {
             System.out.println ("EOI");
             System.out.println ("EOI"); // swallowed!!?
             break;
          }
-         else if (s == KeyboardReader.ERROR_STRING) {
+         else if (s == PKeyboardReader.ERROR_STRING) {
             System.out.println ("ERROR");
             continue;
          }

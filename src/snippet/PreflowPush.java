@@ -1,4 +1,4 @@
-package preflowpush;
+package snippet;
 
 import preflowpush.PResidualGraph;
 import preflowpush.PVertexData;

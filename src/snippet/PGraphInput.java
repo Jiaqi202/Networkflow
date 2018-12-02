@@ -1,4 +1,6 @@
-package preflowpush; /**
+package snippet; 
+
+/**
  * Written by Ed Hong UWT Feb. 19, 2003.
  * Modified by Donald Chinn May 14, 2003.
  * Modified by Donald Chinn December 11, 2003.
@@ -119,11 +121,11 @@ public class PGraphInput {
         PSimpleGraph G;
         G = new PSimpleGraph();
 //        Hashtable table = LoadSimpleGraph(G, args[0]);
-        Hashtable table = LoadSimpleGraph(G, "./snippet/Sample");
+        Hashtable table = LoadSimpleGraph(G, "./src/snippet/Sample");
 
         // Call Preflow-Push
         long startTime = System.currentTimeMillis();
-        PreflowPush preflowPush = new PreflowPush(rg);
+        PreflowPush preflowPush = new PreflowPush();
         long endTime = System.currentTimeMillis();
         System.out.println("It took " + (endTime - startTime) + " ms.");
     }
@@ -132,7 +134,7 @@ public class PGraphInput {
     public static PreflowPush getPreflowPush(String pathandfilename) {
     	PSimpleGraph G = new PSimpleGraph();
         Hashtable table = LoadSimpleGraph(G, pathandfilename);
-        return new PreflowPush(rg);
+        return new PreflowPush();
     }
 }
 

@@ -1,4 +1,4 @@
-package preflowpush;/*
+package snippet;/*
  * Written by Ed Hong UWT Feb. 19, 2003.
  * Modified by Donald Chinn May 14, 2003.
  * Modified by Donald Chinn December 11, 2003.
@@ -15,12 +15,12 @@ package preflowpush;/*
  * @author edhong
  * @version 0.0
  */
-public class Edge {
+public class PEdge {
     /** the first endpoint of the edge */
-    private Vertex v1;
+    private PVertex v1;
     
     /** the second endpoint of the edge */
-    private Vertex v2;
+    private PVertex v2;
     
     private Object data;  // an object associated with this edge
     private Object name;  // a name associated with this edge
@@ -33,7 +33,7 @@ public class Edge {
      * @param data  data to be associated with this edge
      * @param name  a name to be associated with this edge
      */
-    public Edge (Vertex v, Vertex w, Object data, Object name) {
+    public PEdge (PVertex v, PVertex w, Object data, Object name) {
         this.data = data;
         this.name = name;
         this.v1 = v;
@@ -44,7 +44,7 @@ public class Edge {
      * Return the first endpoint of this edge.
      * @return  the first endpoint of this edge
      */
-    public Vertex getFirstEndpoint() {
+    public PVertex getFirstEndpoint() {
         return this.v1;
     }
 
@@ -52,7 +52,7 @@ public class Edge {
      * Return the second endpoint of this edge.
      * @return  the second endpoint of this edge
      */
-    public Vertex getSecondEndpoint() {
+    public PVertex getSecondEndpoint() {
         return this.v2;
     }
 
